@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{asset('favicon.ico')}}">
+
+    {% block title %}<title>Titulo base</title>{% endblock title %}
+    {% block stylesheets %}
+       {{ encore_entry_link_tags('scss/app') }}
+    {% endblock %}
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header>
+        <div id="headerElements">
+            <div id="companyLogo"><img alt="Trae tu empeño" src="https://tugiro.mx/assets/images/img/giro_azul.svg"></div>
+            <div id="menu">
+                <ul>
+                    <li>¿Cómo funciona?</li>
+                    <li>Ventajas</li>
+                    <li>Quiénes somos</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="main">
+        <article><div id="container">{% spaceless %}{% block body %}{% endblock %}{% endspaceless%}</div></article>
+        <nav>Nav</nav>
+        <aside>Aside</aside>
+    </div>
+    <footer>
+      <div id="footerElements">
+          <div class="logo"><img src="https://tugiro.mx/assets/images/img/giro_azul.svg" alt="Trae tu empeño" /></div>
+          <div id="aboutUs">
+              <span class="footerElementTitle">Sobre Nosotros</span>
+              <ul>
+                  <li>Quiénes somos</li>
+                  <li>Contacto</li>
+              </ul>
+          </div>
+          <div id="informacionLegal">
+              <span class="footerElementTitle">Información legal</span>
+              <ul>
+                  <li>Aviso legal y privacidad</li>
+                  <li>Términos y condiciones</li>
+                  <li>Preguntas frecuentes</li>
+              </ul>
+          </div>
+    </footer>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('js/app') }}
+    {% endblock %}
+  </body>
+</html>
